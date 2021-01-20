@@ -1,0 +1,15 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.nav__logo {
+  width: 80px;
+  object-fit: contain;
+}
+.nav__avatar {
+  width: 30px;
+  object-fit: contain;
+}

@@ -1,0 +1,14 @@
+.banner {
+  color: #fff;
+  object-fit: contain;
+  height: 448px;
+}
+.banner__title {
+  font-size: 3rem;
+}
+
+.banner__contents {
+  margin: 0 0 0 30px;
+  padding: 140px 0 0 0;
+  height: 190px;
+}
