@@ -30,11 +30,11 @@ export default function Row({title,fetchUrl,isLargeRow}) {
         }
     };
 
-    const handleClick = () =>{
+    const handleClick = (movie) =>{
         if(trailerUrl){
             setTrailerUrl('');
         }else{
-            movieTrailer(movies?.name || "").then((url) =>{
+            movieTrailer(movie?.name || "").then((url) =>{
                 const urlParams = new URLSearchParams(new URL(url).search);
                 setTrailerUrl(urlParams.get('v'));
             }).catch((err)=> console.log(err))
@@ -47,7 +47,7 @@ export default function Row({title,fetchUrl,isLargeRow}) {
             <div className="row__posters">
             {movies.map(movie =>(
                 <img key={movie.id} 
-                onClick={()=>handleClick(movies)} className={`row__poster ${isLargeRow && "row__posterLarge"}`} src={`${base_url}${ isLargeRow ? movie.poster_path :movie.backdrop_path}`}/>
+                onClick={()=>handleClick(movie)} className={`row__poster ${isLargeRow && "row__posterLarge"}`} src={`${base_url}${ isLargeRow ? movie.poster_path :movie.backdrop_path}`}/>
             ))}
             </div>
             {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}/>}
